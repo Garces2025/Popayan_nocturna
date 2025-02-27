@@ -4,7 +4,7 @@ import Header from "./partials/Header";
 import Home from "./components/interface/home";
 import Footer from "./partials/Footer";
 import Brand from "./components/brands/Brand";
-import Gender from "./components/Genders/Gender";
+
 import Category from "./components/categories/Category";
 import Filter from "./components/events/Filter";
 import ShowEvent from "./components/events/ShowEvent";
