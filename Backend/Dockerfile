@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git
 
-# Instala Composer (copia la última versión oficial)
+# Instala Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Establece el directorio de trabajo
@@ -24,7 +24,7 @@ RUN composer install --no-dev --optimize-autoloader
 # Copia el resto del código de la aplicación
 COPY . .
 
-# Ajusta permisos (modifícalo según tus necesidades)
+# Ajusta permisos (según sea necesario)
 RUN chown -R www-data:www-data /var/www
 
 # Expone el puerto 80
