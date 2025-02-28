@@ -11,7 +11,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <div>
-                        <input placeholder="Introduce tu correo electrónico" type="text" className="form-control" />
+                        <input placeholder="Introduce tu correo electrónico registrado" type="text" className="form-control" />
                         <button className="btn">Suscribete</button>
                     </div>
                 </div>
