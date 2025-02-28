@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git
 
-# Instala Composer (copia desde la imagen oficial de Composer)
+# Instala Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Establece el directorio de trabajo
@@ -24,11 +24,11 @@ RUN composer install --no-dev --optimize-autoloader
 # Copia el resto del código de la aplicación
 COPY . .
 
-# (Opcional) Ajusta permisos para que PHP-FPM pueda escribir en los directorios necesarios
+# Ajusta permisos (si es necesario)
 RUN chown -R www-data:www-data /var/www
 
-# Expone el puerto 80 (o el que vayas a usar)
+# Expone el puerto 80
 EXPOSE 80
 
-# Ejecuta PHP-FPM al iniciar el contenedor
+# Inicia PHP-FPM
 CMD ["php-fpm"]
