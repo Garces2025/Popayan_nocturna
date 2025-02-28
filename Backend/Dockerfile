@@ -1,7 +1,7 @@
 # Usa una imagen oficial de PHP con FPM
 FROM php:8.1-fpm
 
-# Instala extensiones y dependencias necesarias
+# Instala dependencias básicas y extensiones necesarias
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpng-dev \
@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git
 
-# Instala Composer
+# Instala Composer (copia la última versión oficial)
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Establece el directorio de trabajo
@@ -24,7 +24,7 @@ RUN composer install --no-dev --optimize-autoloader
 # Copia el resto del código de la aplicación
 COPY . .
 
-# Ajusta permisos (si es necesario)
+# Ajusta permisos (modifícalo según tus necesidades)
 RUN chown -R www-data:www-data /var/www
 
 # Expone el puerto 80
