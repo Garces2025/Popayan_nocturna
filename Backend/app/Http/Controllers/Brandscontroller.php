@@ -19,7 +19,7 @@ class Brandscontroller extends Controller
 */
     public function index(): JsonResponse
     {
-        $brands = Brand::get();
+        $brands  = Brand::get();
 
         return response()->json(['list' => BrandResource::collection($brands)], 200);
     }
