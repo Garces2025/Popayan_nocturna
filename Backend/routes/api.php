@@ -8,7 +8,6 @@ use App\Http\Controllers\Brandscontroller;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\SavedEventsController;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
