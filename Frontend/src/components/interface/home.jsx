@@ -9,23 +9,20 @@ const Home = () => {
     const brands = useSelector(store => store.brands);
     const data = useSelector(store => store.events);
 
-    // Aseguramos que brands es un arreglo
-    const brandsArray = Array.isArray(brands) ? brands : [];
-
     return(
         <div className="home">
             <Slide />
-            {(brands == null || data == null)
-                ? <Spinner />
-                : brandsArray.map( brand =>
+            {(brands==null || data==null)
+                ?   <Spinner />
+                :   brands.map( brand =>
                     <Fragment key={brand.id}>
-                        <EventBg bg={`bg/${brand.title}.jpg`} />
-                        <ItemsCard events={data} brand={brand.title} state='home' />
+                        <EventBg bg={`bg/${brand.title}.jpg`}/>
+                        <ItemsCard events={data} brand={brand.title} state='home'/>
                     </Fragment>
                 )
             }
         </div>
-    );
+    )
 }
 
 export default Home;
