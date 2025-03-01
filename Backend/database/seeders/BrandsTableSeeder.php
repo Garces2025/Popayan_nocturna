@@ -17,7 +17,7 @@ class BrandsTableSeeder extends Seeder
             ['title' => 'Iglesias'],
             ['title' => 'Hoteles'],
             ['title' => 'Restaurantes'],
-            ['title' => 'Museos'],
+            ['title' => 'Museos'],//Discoteca
             ['title' => 'Parques'],
             ['title' => 'Eventos'],
         ];
